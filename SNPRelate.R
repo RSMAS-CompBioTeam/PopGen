@@ -33,3 +33,9 @@ plot(tab$EV2,tab$EV1,col=as.integer(tab$pop),xlab="eigenvector 2",ylab="eigenvec
 legend("topright",legend=levels(tab$pop),pch="o",col=1:nlevels(tab$pop))
 
 snpgdsClose(genofile)
+
+### Save plot as a png image
+#png(filename = "myPCA.png", width = 4, height = 4, units = "in", res = 300)
+#plot(tab$EV2,tab$EV1,col=as.integer(tab$pop),xlab="eigenvector 2",ylab="eigenvector 1")
+#legend("topright",legend=levels(tab$pop),pch="o",col=1:nlevels(tab$pop))
+#dev.off()
