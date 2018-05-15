@@ -31,8 +31,14 @@ bsub < snp.sh
 This usually takes a while - up to a few days depending on how much data you have. The output will be a file in Variant Call Format (VCF). Go ahead and look at this file (here is a reference for what the fields mean: https://samtools.github.io/hts-specs/VCFv4.2.pdf). This VCF will serve as the raw data for all of our downstread SNP analyses.
 
 # Filtering using vcftools
-The raw VCF file contains a lot of information. We have SNPs, but we also have INDELS. We have variants that are only seen in one individual and we have regions of the genome where we don't even have coverage for many individuals. We have variants of very low quality. The next step is to filter out the variants that we don't want. the best tool for this is **vcftools** (http://vcftools.sourceforge.net/). Pegasus already has vcftools, so we can just load the module:
+The raw VCF file contains a lot of information. We have SNPs, but we also have INDELS. We have variants that are only seen in one individual and we have regions of the genome where we don't even have coverage for many individuals. We have variants of very low quality. The next step is to filter out the variants that we don't want. the best tool for this is **vcftools** (http://vcftools.sourceforge.net/). We'll do this in interactive mode on Pegasus:
 ```bash
+bsub -Is -q interactive bash
+```
+Pegasus already has vcftools, so we can just load the module. We also have to load the correct perl module so that it works.
+```bash
+module unload perl
+module load perl/5.22.1
 module load vcftools/0.1.13
 ```
 Let's just execute the most simple commange and see what we get:
