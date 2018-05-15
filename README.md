@@ -67,9 +67,7 @@ In order to save the vcf, you must use the following options:
   
   --out filtered
 
-Filter this set of SNPs however you want, we'll use them to make a PCA and for outlier analysis. Don't keep too many or they'll take forever to upload (I suggest keeping between 20K and 100K).
-
-Now transfer your filtered vcf file. Use scp from your computer (make sure to change username and path):
+Filter this set of SNPs however you want, we'll use them to make a PCA and for outlier analysis. You can even save multiple filters is you want to compare the downstream analysis!
 
 
 # Principal Components Analysis
