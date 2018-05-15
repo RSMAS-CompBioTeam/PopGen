@@ -77,7 +77,7 @@ One of the most basic ways to visualize mulitvariate data is with a principal co
 ```bash
 scp username@pegasus.ccs.miami.edu:/path/to/vcf /path/on/your/computer
 ```
-Also make sure you download the R script we'll be using from the github repository: `SNPRelate.R`
+Also make sure you download the R script we'll be using from the github repository, `SNPRelate.R`, as the metadata you'll need `WIFL_meta.txt`. The easiest way to do that is just to clone the repository onto your desktop (or wherever you want to work from)
 Now just step through the script using R studio to make your PCA!
 Note: SNPRelate is a great package that can do many other things besides PCA visualization, including calculating FST and relatedness. IF you have extra time, you can play around with these functions. Here is a great tutorial: https://bioconductor.org/packages/release/bioc/vignettes/SNPRelate/inst/doc/SNPRelateTutorial.html
 
