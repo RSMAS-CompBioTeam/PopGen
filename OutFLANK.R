@@ -50,7 +50,7 @@ points(P1$LocusName[outliers],P1$FST[outliers],col="magenta")
 
 
 ## Save plots as png
-#png(filename = "figures/FST.png", width = 8, height = 4, units = "in", res = 300)
+#png(filename = "FST.png", width = 8, height = 4, units = "in", res = 300)
 #par(mfrow = c(1, 2))
 #OutFLANKResultsPlotter(OF,withOutliers=T,
 #                       NoCorr=T,Hmin=0.1,binwidth=0.005,
