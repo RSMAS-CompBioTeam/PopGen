@@ -1,8 +1,8 @@
 library(SNPRelate)
 
 ###Paths to data
-vcf.path = "~/Desktop/Rachael's Stuff/WIFL_maf0.5.vcf"
-meta.path = "~/Desktop/Rachael's Stuff/WIFL_meta.txt"
+vcf.path = "~/Desktop/compbio/filtered.recode.vcf"
+meta.path = "~/Desktop/compbio/WIFL_meta.txt"
 
 ###Convert to gds file
 snpgdsVCF2GDS(vcf.path,"genos.gds",method="biallelic.only") # This take a while
@@ -15,7 +15,7 @@ meta <- read.delim(meta.path)
 
 ###LD-based SNP pruning
 set.seed(1000)
-snpset <- snpgdsLDpruning(genofile,ld.threshold=0.2,autosome.only=F) # You can change LD threshold
+snpset <- snpgdsLDpruning(genofile,ld.threshold=0.5,autosome.only=F) # You can change LD threshold
 snpset.id <- unlist(snpset)
 
 ###Calculate PCA
