@@ -2,8 +2,8 @@ library(OutFLANK)
 library(vcfR)
 
 ###Paths to data
-vcf.path = "~/Desktop/Rachael's Stuff/WIFL_maf0.5.vcf"
-meta.path = "~/Desktop/Rachael's Stuff/WIFL_meta.txt"
+vcf.path = "~/Desktop/compbio/filtered.recode.vcf"
+meta.path = "~/Desktop/compbio/WIFL_meta.txt"
 
 ###VCF to OutFLANK format - info on this found in OutFLANK vignette
 data <- read.vcfR(vcf.path)
@@ -28,7 +28,7 @@ plot(fst$FSTNoCorr,fst$FST) # This is a check to see if we can fit Chi-Sq -shoul
 
 ###Run OutFLANK
 OF <- OutFLANK(fst,LeftTrimFraction=0.05,RightTrimFraction=0.05,
-         Hmin=0.1,NumberOfSamples=175,qthreshold=0.05)
+         Hmin=0.1,NumberOfSamples=164,qthreshold=0.1)
 OutFLANKResultsPlotter(OF,withOutliers=T,
                        NoCorr=T,Hmin=0.1,binwidth=0.005,
                        Zoom=F,RightZoomFraction=0.01,titletext=NULL) #Plot distribution
@@ -38,8 +38,9 @@ OutFLANKResultsPlotter(OF,withOutliers=T,
 
 ###Outliers
 P1 <- pOutlierFinderChiSqNoCorr(fst,Fstbar=OF$FSTNoCorrbar,
-                                dfInferred=OF$dfInferred,qthreshold=0.05,Hmin=0.1)
+                                dfInferred=OF$dfInferred,qthreshold=0.1,Hmin=0.1)
 outliers <- P1$OutlierFlag==TRUE
+table(outliers)
 plot(P1$He,P1$FST,col=rgb(0,0,0,alpha=0.1))
 points(P1$He[outliers],P1$FST[outliers],col="magenta")
 
