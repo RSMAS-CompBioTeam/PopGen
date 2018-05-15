@@ -47,3 +47,14 @@ points(P1$He[outliers],P1$FST[outliers],col="magenta")
 ###Manhattan Plot
 plot(P1$LocusName,P1$FST,xlab="Position",ylab="FST",col=rgb(0,0,0,alpha=0.1))
 points(P1$LocusName[outliers],P1$FST[outliers],col="magenta")
+
+
+## Save plots as png
+#png(filename = "figures/FST.png", width = 8, height = 4, units = "in", res = 300)
+#par(mfrow = c(1, 2))
+#OutFLANKResultsPlotter(OF,withOutliers=T,
+#                       NoCorr=T,Hmin=0.1,binwidth=0.005,
+#                       Zoom=T,RightZoomFraction=0.01,titletext=NULL) #Zoom in on right tail
+#plot(P1$LocusName,P1$FST,xlab="Position",ylab="FST",col=rgb(0,0,0,alpha=0.1))
+#points(P1$LocusName[outliers],P1$FST[outliers],col="magenta")
+#dev.off()
