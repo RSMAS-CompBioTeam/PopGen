@@ -83,7 +83,9 @@ scp username@pegasus.ccs.miami.edu:/path/to/vcf /path/on/your/computer
 ```
 Also make sure you download the R script we'll be using from the github repository, `SNPRelate.R`, as the metadata you'll need `WIFL_meta.txt`. The easiest way to do that is just to clone the repository onto your desktop (or wherever you want to work from)
 Now just step through the script using R studio to make your PCA!
-Note: SNPRelate is a great package that can do many other things besides PCA visualization, including calculating FST and relatedness. IF you have extra time, you can play around with these functions. Here is a great tutorial: https://bioconductor.org/packages/release/bioc/vignettes/SNPRelate/inst/doc/SNPRelateTutorial.html
+Note: SNPRelate is a great package that can do many other things besides PCA visualization, including calculating FST and relatedness. If you have extra time, you can play around with these functions. Here is a great tutorial: https://bioconductor.org/packages/release/bioc/vignettes/SNPRelate/inst/doc/SNPRelateTutorial.html
+
+If you still have extra time, you can play around with a spatial structure analysis using TESS3 (https://github.com/cayek/TESS3/tree/master/tess3r). Install the R package and follow the tutorial for help with the code.
 
 # Outlier Analysis
 There are many software programs designed to do outlier analysis. We'll use OutFLANK because it is easy to implement and its non-parametric approach is good for organisms with complex demography. Download the R script from the github repository: `OutFLANK.R` and work through it step by step.
