@@ -1,8 +1,8 @@
 library(SNPRelate)
 
-###Paths to data
-vcf.path = "~/Desktop/compbio/filtered.recode.vcf"
-meta.path = "~/Desktop/compbio/WIFL_meta.txt"
+### Relative paths to data within the PopGen repository
+vcf.path = "filtered.recode.vcf"
+meta.path = "WIFL_meta.txt"
 
 ###Convert to gds file
 snpgdsVCF2GDS(vcf.path,"genos.gds",method="biallelic.only") # This take a while
