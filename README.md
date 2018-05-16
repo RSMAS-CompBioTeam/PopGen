@@ -75,17 +75,23 @@ In order to save the vcf, you must use the following options:
 
 Filter this set of SNPs however you want, we'll use them to make a PCA and for outlier analysis. You can even save multiple filters is you want to compare the downstream analysis!
 
+# Analyzing SNP data
+Now that we've filtered our SNP data, we are ready to carry out downstream statistical analyses, which we will do in RStudio. There are a couple of R scripts in this Github repository that we'll use for these analyses. An easy way for you to get these scripts onto your computer (which allows us to show you more cool ways to use Github!) is to fork and clone this repository. Creating a fork of this repository makes a copy of it that is owned by you. Once you make this forked copy, you can then clone it (i.e. download it) to your local computer and work with the files inside. Because this copy of the repository is owned by you, you can also make changes and then push them back to Github. 
+
+First, click the 'Fork' button at the top right of this page, and select your Github account. Next, open RStudio and click File > New Project. This time, select 'Version Control'. Paste in the web address to your new forked repository, call it 'PopGen', and create it within your `~/github/` directory.
+
+Cool - now you have a new Rproject that contains the scripts we are going to use in the next part of the analysis! Git is tracking everything already so you can keep track of your analysis as it develops from here.
+
 
 # Principal Components Analysis
-One of the most basic ways to visualize mulitvariate data is with a principal components analysis (PCA). Here we'll make one based on the filtered SNP file you made in the last step. Since we'll do this in R on our local computers, we first need to get our vcf files from Pegasus to our laptops (make sure to change username and paths):
+One of the most basic ways to visualize mulitvariate data is with a principal components analysis (PCA). Here we'll make one based on the filtered SNP file you made in the last step. Since we'll do this in R on our local computers, we first need to get our vcf files from Pegasus into our local repository (make sure to change username and paths):
 ```bash
-scp username@pegasus.ccs.miami.edu:/path/to/vcf /path/on/your/computer
+scp username@pegasus.ccs.miami.edu:/path/to/vcf ~/github/PopGen/
 ```
-Also make sure you download the R script we'll be using from the github repository, `SNPRelate.R`, as the metadata you'll need `WIFL_meta.txt`. The easiest way to do that is just to clone the repository onto your desktop (or wherever you want to work from)
-Now just step through the script using R studio to make your PCA!
+Now just step through the `SNPRelate.R` script to make your PCA!
 Note: SNPRelate is a great package that can do many other things besides PCA visualization, including calculating FST and relatedness. If you have extra time, you can play around with these functions. Here is a great tutorial: https://bioconductor.org/packages/release/bioc/vignettes/SNPRelate/inst/doc/SNPRelateTutorial.html
 
 If you still have extra time, you can play around with a spatial structure analysis using TESS3 (https://github.com/cayek/TESS3/tree/master/tess3r). Install the R package and follow the tutorial for help with the code.
 
 # Outlier Analysis
-There are many software programs designed to do outlier analysis. We'll use OutFLANK because it is easy to implement and its non-parametric approach is good for organisms with complex demography. Download the R script from the github repository: `OutFLANK.R` and work through it step by step.
+There are many software programs designed to do outlier analysis. We'll use OutFLANK because it is easy to implement and its non-parametric approach is good for organisms with complex demography. Work through the `OutFLANK.R` script step by step.
