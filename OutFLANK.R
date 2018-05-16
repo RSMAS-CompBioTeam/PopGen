@@ -1,9 +1,9 @@
 library(OutFLANK)
 library(vcfR)
 
-###Paths to data
-vcf.path = "~/Desktop/compbio/filtered.recode.vcf"
-meta.path = "~/Desktop/compbio/WIFL_meta.txt"
+###Paths to data (relative within the PopGen repository)
+vcf.path = "filtered.recode.vcf"
+meta.path = "WIFL_meta.txt"
 
 ###VCF to OutFLANK format - info on this found in OutFLANK vignette
 data <- read.vcfR(vcf.path)
