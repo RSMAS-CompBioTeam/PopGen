@@ -24,7 +24,28 @@ wget --no-check-certificate https://www.dropbox.com/sh/9l812bwwnorwfom/AAAF3VYK1
 unzip snp.zip
 ```
 
-The script `snp.sh` shows how we can use samtools to identify SNPs in our dataset. Let's execute it:
+The script `snp.sh` shows how we can use samtools to identify SNPs in our dataset.  Here is the script:
+
+```bash
+#!/bin/bash
+
+#BSUB -J SNPcalling
+#BSUB -P ccsfellows
+#BSUB -o %J.out
+#BSUB -e %J.err
+#BSUB -n 2
+
+module load samtools/1.2
+module load bcftools/1.2
+
+##Index fasta reference
+samtools faidx WIFL_sub.fa
+
+##Call SNPs
+samtools mpileup -uf WIFL_sub.fa bam/*.bam | bcftools call -vmO v > raw_snps.vcf
+```
+
+Let's execute it:
 
 ```bash
 bsub < snp.sh
