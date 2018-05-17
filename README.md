@@ -33,7 +33,7 @@ This usually takes a while - up to a few days depending on how much data you hav
 # Filtering using vcftools
 The raw VCF file contains a lot of information. We have SNPs, but we also have INDELS. We have variants that are only seen in one individual and we have regions of the genome where we don't even have coverage for many individuals. We have variants of very low quality. The next step is to filter out the variants that we don't want. the best tool for this is **vcftools** (http://vcftools.sourceforge.net/). We'll do this in interactive mode on Pegasus:
 ```bash
-bsub -Is -q interactive bash
+bsub -Is -P ccsfellows bash
 ```
 Pegasus already has vcftools, so we can just load the module. We also have to load the correct perl module so that it works.
 ```bash
