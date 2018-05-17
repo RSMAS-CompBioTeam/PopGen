@@ -109,7 +109,7 @@ Cool - now you have a new Rproject that contains the scripts we are going to use
 # Principal Components Analysis
 One of the most basic ways to visualize mulitvariate data is with a principal components analysis (PCA). Here we'll make one based on the filtered SNP file you made in the last step. Since we'll do this in R on our local computers, we first need to get our vcf files from Pegasus into our local repository (make sure to change username and paths):
 ```bash
-scp username@pegasus.ccs.miami.edu:/path/to/vcf ~/github/PopGen/
+scp username@pegasus.ccs.miami.edu:~/snp/filtered.recode.vcf ~/github/PopGen/
 ```
 Now just step through the `SNPRelate.R` script to make your PCA!
 Note: SNPRelate is a great package that can do many other things besides PCA visualization, including calculating FST and relatedness. If you have extra time, you can play around with these functions. Here is a great tutorial: https://bioconductor.org/packages/release/bioc/vignettes/SNPRelate/inst/doc/SNPRelateTutorial.html
