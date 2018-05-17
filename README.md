@@ -18,6 +18,8 @@ Once you have aligned your reads to a reference genome or transcriptome, there a
 Today, we will be using one of the more simple pipelines - **samtools**. We start with a set of bam alignment files and a fasta file of the reference genome. We'll use a set downloaded from dropbox along with some scripts we will be using:
 
 ```bash
+mkdir snp
+cd snp
 wget --no-check-certificate https://www.dropbox.com/sh/9l812bwwnorwfom/AAAF3VYK1VmVLMlXzeR-aWtFa?dl=1 -O snp.zip
 unzip snp.zip
 ```
